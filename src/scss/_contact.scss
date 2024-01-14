@@ -1,0 +1,117 @@
+.contact-section {
+  display: flex;
+  margin-top: 100px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 119rem;
+  .contact {
+    display: flex;
+    margin-top: 100px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    .main-image {
+      width: 60%;
+      img {
+        height: 1000px;
+      }
+    }
+    .contact-text-section {
+      width: 40%;
+      flex-direction: column;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .contact-text-section-heading {
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          font-size: 38px;
+          color: $color-dark;
+          opacity: 1;
+        }
+        .contact-map-image {
+          display: flex;
+          margin-top: 40px;
+          img {
+            width: 253px;
+          }
+        }
+
+        .contact-form-section {
+          width: 528px;
+          display: flex;
+
+        }
+
+      }
+    }
+  }
+}
+.form-inputs {
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  label {
+    width: 100%;
+  }
+  input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #707070;
+    height: 62px;
+  }
+}
+
+.form-message {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  margin-top: 20px;
+  label {
+    width: 100%;
+  }
+  textarea {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #707070;
+    height: 97px;
+  }
+}
+
+.form-button {
+  width: 100%;
+  margin-top: 100px;
+  justify-content: flex-end;
+  align-items: flex-end;
+  display: flex;
+  input {
+    width: 150px;
+    height: 50px;
+    font-size: 18px;
+    line-height: 32px;
+  }
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  .footer-copyright-wrapper {
+    margin-right: auto;
+  }
+  .footer-social-media-images {
+    justify-content: flex-end;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: row;
+  }
+}

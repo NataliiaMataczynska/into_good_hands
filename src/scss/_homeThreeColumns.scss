@@ -1,0 +1,35 @@
+.home-columns {
+  display: flex;
+  width: 119rem;
+  height: 384px;
+  background: yellow;
+  justify-content: space-around;
+  align-items: center;
+  .columns {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 334px;
+    height: 252px;
+    .feature-number {
+      font-size: 90px;
+      font-weight: 300;
+      line-height: 122px;
+      text-align: center;
+    }
+    .feature-title {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 30px;
+      text-align: center;
+      padding: 10px;
+    }
+    .feature-description {
+      text-align: center;
+      font-size: 16px;
+      font-weight: 300;
+      line-height: 18px;
+      letter-spacing: -0.32px;
+    }
+  }
+}
