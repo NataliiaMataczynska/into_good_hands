@@ -30,11 +30,15 @@
         margin: 25px;
         width: 208px;
         height: 79px;
-        color: $color-dark;
+        color: $color-shadow;
         opacity: 1;
-        border: 1px solid $color-dark;
+        border: none;
         font-size: 24px;
         text-align: center;
+      }
+      .selected {
+        color: $color-dark;
+        border: 1px solid $color-shadow;
       }
     }
     .section-description {
@@ -91,14 +95,18 @@
     display: flex;
     margin-top: 60px;
     .page-button {
-      border: 1px solid $color-shadow;
+      border: none;
       opacity: 1;
       width: 40px;
       height: 50px;
       font-size: 18px;
       line-height: 24px;
-      color: $color-dark;
+      color: $color-shadow;
       margin-right: 10px;
+    }
+    .selected {
+      color: $color-dark;
+      border: 1px solid $color-shadow;
     }
   }
 }
