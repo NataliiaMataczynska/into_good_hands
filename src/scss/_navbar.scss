@@ -15,16 +15,30 @@
       display: flex;
       align-items: center;
       position: relative;
-      border: 1px solid black;
+      border: none;
       margin-left: 20px;
       .navbar-link {
         text-decoration: none;
-        color: black;
+        color: $color-shadow;
         font-size: 18px;
         font-weight: 300;
         padding: 9px 20px 9px;
       }
     }
+    .navbar-item:hover {
+      border: 1px solid $color-dark;
+      .navbar-link:hover {
+        color: black;
+      }
+    }
+    .active-item {
+      border: 1px solid $color-dark;
+      .active-link {
+        color: black;
+      }
+    }
+
+
   }
 }
 

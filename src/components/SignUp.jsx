@@ -4,6 +4,8 @@
 //   useNavigate
 // } from 'react-router-dom';
 
+import image1 from "../assets/Decoration.svg";
+
 export default function SignUp() {
 
   // const navigation = useNavigate();
@@ -29,11 +31,24 @@ export default function SignUp() {
   return (
     <>
       {/*<form onSubmit={handleSignUp}>*/}
-        <form >
-        <input placeholder="email" />
-        <input placeholder="password" type="password" />
-        <button>Zaloguj</button>
-      </form>
+        <div className="sign-in" >
+            <h1>Załóż konto</h1>
+            <div className="decoration-img">
+                <img alt="" src={image1} className="image" />
+            </div>
+            <form className="sign-in-form">
+                <label>Email</label>
+                <input placeholder="" name="user_email"/>
+                <label>Hasło</label>
+                <input placeholder="" type="password" name="password" />
+                <label>Powtórz hasło</label>
+                <input placeholder="" type="password" name="confirm_password"/>
+            </form>
+            <div className="main-buttons" style={{ display: "flex", justifyContent: "space-between", width: "400px" }}>
+                <button className="login-button ">Załóż konto</button>
+                <button className="login-button " >Zaloguj się</button>
+            </div>
+        </div>
     </>
   )
 

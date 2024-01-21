@@ -28,7 +28,20 @@
       justify-content: flex-end;
       align-items: center;
       width: 100%;
-      .login-button {}
+      .login-button {
+        border: none;
+        opacity: 1;
+        margin-top: 66px;
+        font-size: 16px;
+        color: $color-shadow;
+        padding: 10px;
+        &:first-of-type {
+          margin-right: 20px;
+        }
+      }
+      .clicked-button {
+        border: 1px solid $color-yellow;
+      }
     }
     .main-text {
       display: flex;
@@ -53,7 +66,9 @@
         display: flex;
         .main-button {
           display: flex;
-          margin-top: 100px; font-size: 36px; line-height: 45px;
+          margin-top: 100px;
+          font-size: 36px;
+          line-height: 45px;
           padding-top: 13px;
           padding-right: 73px;
           padding-left: 73px;

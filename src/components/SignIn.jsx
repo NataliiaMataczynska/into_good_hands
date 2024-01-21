@@ -4,6 +4,8 @@
 //   useNavigate
 // } from 'react-router-dom';
 
+import image1 from "../assets/Decoration.svg";
+
 export default function SignIn() {
 
   // const navigation = useNavigate();
@@ -28,12 +30,22 @@ export default function SignIn() {
 
   return (
     <>
-      {/*<form onSubmit={handleSignIn}>*/}
-      <form>
-        <input placeholder="email" />
-        <input placeholder="password" type="password" />
-        <button>Załóż konto</button>
-      </form>
+        <div className="sign-in" >
+            <h1>Zalogoj się</h1>
+            <div className="decoration-img">
+                <img alt="" src={image1} className="image" />
+            </div>
+            <form className="sign-in-form">
+                <label>Email</label>
+                <input placeholder="" name="user_email"/>
+                <label>Hasło</label>
+                <input placeholder="" type="password" />
+            </form>
+            <div className="main-buttons" style={{ display: "flex", justifyContent: "space-between", width: "400px" }}>
+                <button className="login-button ">Załóż konto</button>
+                <button className="login-button " >Zaloguj się</button>
+            </div>
+        </div>
     </>
   )
 
