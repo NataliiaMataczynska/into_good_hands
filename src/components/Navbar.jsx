@@ -1,16 +1,48 @@
 
-import { Outlet } from 'react-router-dom';
+import {NavLink, useNavigate, Outlet} from 'react-router-dom';
 import { Link as ScrollLink } from 'react-scroll';
+import {useState} from "react";
+export default function Navbar() {
+    const [showSignIn, setShowSignIn] = useState(false);
+    const [showSignUp, setShowSignUp] = useState(false);
+    const [activeButton, setActiveButton] = useState(null);
+    const [activeLink, setActiveLink] = useState("/");
 
-export default function Navbar({setActiveLink, handleSetActive, activeLink, handleBackHome}) {
+    const handleResetState = () => {
+        setShowSignIn(false);
+        setShowSignUp(false);
+        setActiveButton(null);
+    };
+
+    const navigator = useNavigate();
+    const handleBackHome = () => {
+        navigator("/");
+    };
 
     const handleClick = (to) => {
         setActiveLink(to);
         handleSetActive(to);
     };
 
+    const handleSetActive = (to) => {
+        setActiveButton(to);
+        handleResetState();
+    };
+
     return (
-        <div>
+        <div className="nav-section">
+            <div className="navlink-buttons">
+                <NavLink to='signin'
+                         className={`navlink-button ${activeButton === 'login' ? 'clicked-button' : ''}`}
+                >
+                    Zaloguj
+                </NavLink>
+                <NavLink to='signup'
+                         className={`navlink-button ${activeButton === 'register' ? 'clicked-button' : ''}`}
+                >
+                    Załóż konto
+                </NavLink>
+            </div>
             <nav className="navbar" >
                 <ul className="navbar-items" style={{ display: "flex", textDecoration: "none" }}>
                     <li className='navbar-item'>

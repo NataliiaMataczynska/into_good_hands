@@ -1,22 +1,18 @@
-import {  useNavigate } from 'react-router-dom';
+
 //
 // import supabase from '../utils/supabase';
 //
 // import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-import Navbar from "./Navbar.jsx";
-import SignUp from "./SignUp.jsx";
-import SignIn from "./SignIn.jsx";
+// import SignUp from "./SignUp.jsx";
+// import SignIn from "./SignIn.jsx";
 import HomeThreeColumns from  "./HomeThreeColumns.jsx"
 import About from  "./About.jsx"
 import AboutUs from  "./AboutUs.jsx"
 import FoundationsAndOrganizations from "./FoundationsAndOrganizations.jsx"
 import Contact from "./Contact.jsx"
-import image1 from "../assets/Decoration.svg";
-import image2 from "../assets/Home-Hero-Image.jpg";
-import { Element } from "react-scroll";
-import {Outlet} from "react-router-dom";
+import Header from "./Header.jsx";
 
 
 export default function Home() {
@@ -91,87 +87,13 @@ export default function Home() {
     //     console.error(error);
     // }
 
-    const [showSignIn, setShowSignIn] = useState(false);
-    const [showSignUp, setShowSignUp] = useState(false);
-    const [activeButton, setActiveButton] = useState(null);
 
-    const handleButtonClick = (buttonType) => {
-        if (buttonType === 'login') {
-            setShowSignIn(true);
-            setShowSignUp(false);
-            setActiveButton('login');
-        } else if (buttonType === 'register') {
-            setShowSignIn(false);
-            setShowSignUp(true);
-            setActiveButton('register');
-        }
-    };
 
-    const [activeLink, setActiveLink] = useState("/");
-    const handleResetState = () => {
-        setShowSignIn(false);
-        setShowSignUp(false);
-        setActiveButton(null);
-    };
-
-    const handleSetActive = (to) => {
-        setActiveLink(to);
-        handleResetState();
-    };
-
-    const navigator = useNavigate();
-
-    const handleBackHome = () => {
-        navigator("/");
-    }
 
 
     return (
         <>
-            <Element name="home-section">
-                <header className="home-container">
-                    <div className="home-img">
-                        <img alt="" src={image2} className="image" />
-                    </div>
-                    <div className="home-main">
-                        <div className="login-buttons">
-                            <button
-                                className={`login-button ${activeButton === 'login' ? 'clicked-button' : ''}`}
-                                onClick={() => handleButtonClick('login')}
-                            >
-                                Zaloguj
-                            </button>
-                            <button
-                                className={`login-button ${activeButton === 'register' ? 'clicked-button' : ''}`}
-                                onClick={() => handleButtonClick('register')}
-                            >
-                                Załóż konto
-                            </button>
-                        </div>
-                        <Navbar
-                            setActiveLink={setActiveLink}
-                            handleSetActive={handleSetActive}
-                            activeLink={activeLink}
-                            handleBackHome={handleBackHome}
-                        />
-                        <div className="main-text" style={{ display: showSignIn || showSignUp ? 'none' : 'flex' }}>
-                            <h1>Zacznij pomagać!<br />
-                                Oddaj niechciane rzeczy w zaufane ręce
-                            </h1>
-                            <div className="decoration-img">
-                                <img alt="" src={image1} className="image" />
-                            </div>
-                            <div className="main-buttons" style={{ display: "flex" }}>
-                                <button className="main-button ">ODDAJ RZECZY</button>
-                                <button className="main-button " >ZORGANIZUJ ZBIÓRKĘ</button>
-                            </div>
-                        </div>
-                        {showSignIn && <SignIn />}
-                        {showSignUp && <SignUp />}
-                        <Outlet />
-                    </div>
-                </header>
-            </Element>
+            <Header />
             <HomeThreeColumns />
             <About />
             <AboutUs />

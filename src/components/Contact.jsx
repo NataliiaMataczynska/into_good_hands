@@ -14,41 +14,61 @@ export default function Contact() {
         email: "",
         message: ""
     });
-    const [errors, setErrors] = useState([]);
-    // const [success, setSuccess] = useState(false);
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        message: ""
+    });
 
     const form = useRef();
 
     const sendEmail = (e) => {
         e.preventDefault();
 
-        const _errors = [];
+        const newErrors = {
+            name: "",
+            email: "",
+            message: ""
+        };
 
         if (formData.name.trim().length < 2) {
-            _errors.push("Podane imię jest niepoprawne!");
+            newErrors.name = "Podane imię jest niepoprawne!";
         }
 
         if (formData.email.trim().length < 3 || !formData.email.includes('@')) {
-            _errors.push("Podany email jest nieprawidłowy!");
+            newErrors.email = "Podany email jest nieprawidłowy!";
         }
 
         if (formData.message.trim().length < 120) {
-            _errors.push("Wiadomość musi mieć co najmniej 120 znaków!");
+            newErrors.message = "Wiadomość musi mieć co najmniej 120 znaków!";
         }
 
-        setErrors(_errors);
+        setErrors(newErrors);
 
-        if (_errors.length > 0) {
+        if (Object.values(newErrors).some(error => error !== "")) {
             return;
         }
 
-        fetch("https://fer-api.coderslab.pl/v1/portfolio/contact")
+        fetch("https://fer-api.coderslab.pl/v1/portfolio/contact", {
+            method: "POST",
+            body: JSON.stringify(formData),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
             .then(response =>  {
                 console.log(response);
                 return response.json();
+                // if (response.status = 200) {
+                //     return response.json();
+                // }
             })
             .then(data => {
                 console.log(data);
+
+            })
+            .catch(error => {
+                console.error(error);
             })
 
 
@@ -102,21 +122,21 @@ export default function Contact() {
                             </div>
                         </div>
                         <form className="contact-form-section" ref={form} onSubmit={sendEmail}>
-                            {errors.map((error, index) => (
-                                <div key={index} style={{ color: 'red' }}>{error}</div>
-                            ))}
                             <div className="form-inputs">
                                 <div style={{ marginRight: "20px" }}>
                                     <label>Wpisz swoje imię</label>
+                                    {errors.name && <div style={{ color: 'red' }}>{errors.name}</div>}
                                     <input type="text" name="name" value={formData.name} onChange={handleInput} />
                                 </div>
                                 <div>
                                     <label>Wpisz swój email</label>
+                                    {errors.email && <div style={{ color: 'red' }}>{errors.email}</div>}
                                     <input type="email" name="email" value={formData.email} onChange={handleInput} />
                                 </div>
                             </div>
                             <div className="form-message">
                                 <label>Wpisz swoją wiadomość</label>
+                                {errors.message && <div style={{ color: 'red' }}>{errors.message}</div>}
                                 <textarea name="message" value={formData.message} onChange={handleInput} />
                             </div>
                             <div className="form-button">
