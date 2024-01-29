@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 119rem;
+  width: 100rem;
   .contact {
     display: flex;
     margin-top: 100px;
@@ -15,7 +15,7 @@
     .main-image {
       width: 60%;
       img {
-        height: 1000px;
+        height: 900px;
       }
     }
     .contact-text-section {
@@ -104,13 +104,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: 25px 0;
   .footer-copyright-wrapper {
-    margin-right: auto;
+    text-align: center;
+    flex-grow: 1;
   }
   .footer-social-media-images {
-    justify-content: flex-end;
-    align-items: flex-end;
     display: flex;
     flex-direction: row;
+  }
+  .footer-social-media-image {
+    margin-left: 10px;
   }
 }

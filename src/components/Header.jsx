@@ -1,5 +1,5 @@
 
-import {NavLink, Outlet} from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import image1 from "../assets/Decoration.svg";
 import image2 from "../assets/Home-Hero-Image.jpg";
 import { Element } from "react-scroll";

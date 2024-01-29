@@ -7,6 +7,14 @@ import image3 from "../assets/Facebook.svg";
 import image4 from "../assets/Instagram.svg";
 // import supabase from '../utils/supabase';
 
+const validateEmail = (email) => {
+    return String(email)
+        .toLowerCase()
+        .match(
+            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+        );
+};
+
 export default function Contact() {
     const [messageSent, setMessageSent] = useState(false);
     const [formData, setFormData] = useState({
@@ -22,6 +30,8 @@ export default function Contact() {
 
     const form = useRef();
 
+
+
     const sendEmail = (e) => {
         e.preventDefault();
 
@@ -35,7 +45,7 @@ export default function Contact() {
             newErrors.name = "Podane imię jest niepoprawne!";
         }
 
-        if (formData.email.trim().length < 3 || !formData.email.includes('@')) {
+        if (!validateEmail(formData.email)) {
             newErrors.email = "Podany email jest nieprawidłowy!";
         }
 

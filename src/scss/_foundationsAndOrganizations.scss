@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 119rem;
+  width: 100rem;
   .top-column {
     display: flex;
     flex-direction: column;
@@ -94,6 +94,7 @@
   .page-buttons {
     display: flex;
     margin-top: 60px;
+    justify-content: center;
     .page-button {
       border: none;
       opacity: 1;

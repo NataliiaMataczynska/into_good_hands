@@ -3,12 +3,12 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 119rem;
+  width: 100rem;
 
   .home-img {
     display: flex;
     overflow: hidden;
-    width: 50%;
+    width: 55%;
     .image {
       margin-left: -30rem;
       height: 100%;
@@ -18,14 +18,13 @@
   .home-main {
     display: flex;
     flex-direction: column;
-    margin-left: 120px;
     height: 980px;
-    width: 50%;
+    width: 45%;
     .main-text {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      width: 720px;
+      width: 716px;
       align-items: center;
       line-height: 55px;
       h1 {
@@ -42,20 +41,20 @@
       }
       .main-buttons {
         display: flex;
+        justify-content: space-around;
+        text-align: center;
         .main-button {
           display: flex;
+          width: 40%;
           margin-top: 100px;
           font-size: 36px;
           line-height: 45px;
           padding-top: 13px;
-          padding-right: 73px;
-          padding-left: 73px;
           text-align: center;
-          justify-content: space-between;
         }
-        .main-button:last-child {
-          margin-left: 20px;
-        }
+        //.main-button:last-child {
+        //  margin-left: 20px;
+        //}
       }
     }
   }
