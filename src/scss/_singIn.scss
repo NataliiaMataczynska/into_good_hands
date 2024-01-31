@@ -85,6 +85,18 @@
       border: 1px solid $color-yellow;
     }
   }
+  .active-button,
+  .active-sign.navlink {
+    background-color: $color-shadow;
+    color: white;
+    &:hover {
+      border: 1px solid $color-yellow;
+    }
+    &:hover {
+      color: $color-yellow;
+      text-shadow: 0 0 10px $color-yellow, 0 0 20px $color-yellow, 0 0 40px $color-yellow, 0 0 80px $color-yellow;
+    }
+  }
 
 
 }

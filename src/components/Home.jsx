@@ -99,23 +99,6 @@ export default function Home() {
             <AboutUs />
             <FoundationsAndOrganizations />
             <Contact />
-            {/*<hr />*/}
-            {/*/!*<form onSubmit={handleNoteSave}>*!/*/}
-            {/*<form>*/}
-            {/*    <textarea />*/}
-            {/*    <button>Save</button>*/}
-            {/*</form>*/}
-            {/*<hr />*/}
-            {/*<ul>*/}
-            {/*    {*/}
-            {/*        notes && notes.map(note => (*/}
-            {/*            <li key={note.id}>{note.note}</li>*/}
-            {/*        ))*/}
-            {/*    }*/}
-            {/*</ul>*/}
-            {/*<hr />*/}
-            {/*/!*<button onClick={handleSignOut}>Sign out</button>*!/*/}
-            {/*<button>Sign out</button>*/}
         </>
     );
 }

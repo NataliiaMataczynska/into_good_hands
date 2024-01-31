@@ -39,17 +39,17 @@
           width: 253px;
         }
       }
-      .main-buttons {
+      .header-buttons {
         display: flex;
         justify-content: space-around;
         text-align: center;
-        .main-button {
+        .header-button {
           display: flex;
           width: 40%;
           margin-top: 100px;
           font-size: 36px;
           line-height: 45px;
-          padding-top: 13px;
+          padding: 13px;
           text-align: center;
         }
         //.main-button:last-child {

@@ -51,15 +51,15 @@ export default function SignUp() {
                 <label>Powtórz hasło</label>
                 <input placeholder="" type="password" name="confirm_password"/>
             </form>
-            <div className="main-buttons" >
-                <button className="login-button ">Zaloguj się</button>
+            <div className="main-buttons " >
                 <NavLink
                     to='/signin'
-                    className='login-button '
+                    className='active-sing login-button '
                     onClick={handleSing}
                 >
                     Załóż konto
                 </NavLink>
+                <button className="login-button active-button ">Zaloguj się</button>
             </div>
         </div>
         {activeButton === 'register' && <SignIn />}

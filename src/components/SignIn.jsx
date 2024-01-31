@@ -47,14 +47,14 @@ export default function SignIn() {
                 <input placeholder="" type="password" />
             </form>
             <div className="main-buttons" >
-                <button className="login-button ">Załóż konto</button>
                 <NavLink
                     to='/signup'
-                    className='login-button '
+                    className='active-sing login-button '
                     onClick={handleSing}
                 >
                     Zaloguj się
                 </NavLink>
+                <button className="login-button active-button"> Załóż konto</button>
             </div>
         </div>
         {activeButton === 'register' && <SignUp />}

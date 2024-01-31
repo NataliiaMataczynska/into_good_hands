@@ -19,9 +19,9 @@ export default function Header(){
                         <div className="decoration-img">
                             <img alt="" src={image1} className="image" />
                         </div>
-                        <div className="main-buttons" style={{ display: "flex" }}>
-                            <button className="main-button ">ODDAJ RZECZY</button>
-                            <button className="main-button " >ZORGANIZUJ ZBIÓRKĘ</button>
+                        <div className="header-buttons" style={{ display: "flex" }}>
+                            <button className="header-button ">ODDAJ RZECZY</button>
+                            <button className="header-button " >ZORGANIZUJ ZBIÓRKĘ</button>
                         </div>
                     </div>
                     <Outlet />
